@@ -15,6 +15,9 @@ touch /var/www/html/storage/logs/laravel.log
 # Create storage symlink
 php artisan storage:link || true
 
+# Clear any stale build cache
+php artisan config:clear || true
+
 # Package discovery (runs now with runtime environment loaded)
 php artisan package:discover --ansi || true
 
