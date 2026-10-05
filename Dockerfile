@@ -1,5 +1,5 @@
-# Stage 1: Build Frontend Assets (Vite & Tailwind CSS)
-FROM node:20-alpine AS frontend
+# Stage 1: Build Frontend Assets (Vite & Tailwind CSS v4)
+FROM node:20-slim AS frontend
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
