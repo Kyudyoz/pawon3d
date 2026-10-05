@@ -36,8 +36,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        if (Schema::hasTable('store_profiles')) {
-            View::share('storeProfile', StoreProfile::first());
+        try {
+            if (Schema::hasTable('store_profiles')) {
+                View::share('storeProfile', StoreProfile::first());
+            }
+        } catch (\Throwable $e) {
+            // Ignore database connection error when running without database or during builds
         }
 
         Livewire::component('livewire-alert', \Jantinnerezo\LivewireAlert\LivewireAlert::class);

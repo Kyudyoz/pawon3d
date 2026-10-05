@@ -5,6 +5,7 @@ FROM php:8.3-fpm-alpine
 RUN apk add --no-cache \
     nginx \
     curl \
+    git \
     ca-certificates \
     libpng-dev \
     libjpeg-turbo-dev \
@@ -25,8 +26,8 @@ WORKDIR /var/www/html
 # Copy application files (including pre-built public/build assets)
 COPY . .
 
-# Install PHP dependencies without dev packages
-RUN composer install --no-dev --optimize-autoloader --no-interaction
+# Install PHP dependencies without dev packages and skip scripts during build
+RUN composer install --no-dev --optimize-autoloader --no-interaction --no-scripts
 
 # Setup Nginx and Entrypoint
 COPY docker/nginx.conf /etc/nginx/http.d/default.conf
