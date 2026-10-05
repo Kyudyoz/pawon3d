@@ -1,7 +1,7 @@
 # PHP Application & Nginx Web Server
 FROM php:8.3-fpm-alpine
 
-# Install system dependencies and PHP extensions (including MySQL, SQLite, GD, Zip, XML)
+# Install system dependencies and PHP extensions (including MySQL, SQLite, GD with WebP, Zip, XML, Exif)
 RUN apk add --no-cache \
     nginx \
     curl \
@@ -10,6 +10,7 @@ RUN apk add --no-cache \
     libpng-dev \
     libjpeg-turbo-dev \
     freetype-dev \
+    libwebp-dev \
     libzip-dev \
     zip \
     unzip \
@@ -17,8 +18,8 @@ RUN apk add --no-cache \
     oniguruma-dev \
     sqlite-dev \
     libxml2-dev \
-    && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install -j$(nproc) pdo pdo_mysql pdo_sqlite gd zip bcmath intl opcache xml dom simplexml fileinfo
+    && docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp \
+    && docker-php-ext-install -j$(nproc) pdo pdo_mysql pdo_sqlite gd zip bcmath intl opcache xml dom simplexml fileinfo exif
 
 # Install Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
