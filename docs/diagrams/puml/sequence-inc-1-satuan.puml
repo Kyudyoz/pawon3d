@@ -4,7 +4,7 @@ skinparam sequenceMessageAlign center
 
 title Sequence Diagram\nKelola Satuan & Konversi
 
-actor "Bagian Inventori" as Inv
+actor "Staff Inventori" as Inv
 participant "UnitPage" as UP
 participant "UnitController" as UC
 participant "Unit" as UM

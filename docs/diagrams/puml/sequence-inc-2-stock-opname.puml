@@ -4,7 +4,7 @@ skinparam sequenceMessageAlign center
 
 title Sequence Diagram\nStock Opname (Hitung)
 
-actor "Bagian Inventori" as Inv
+actor "Staff Inventori" as Inv
 participant "HitungPage" as HP
 participant "HitungController" as HC
 participant "Hitung" as HM

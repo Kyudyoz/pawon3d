@@ -17,7 +17,7 @@ UP -> UC : mount()
 UC -> UM : getAll()
 UC --> UP : displayUsers()
 
-Admin -> UP : Menambah pengguna baru(data)
+Admin -> UP : Menambah Staff Baru(data)
 UP -> UC : createUser(name, email, role)
 UC -> UM : create(name, email)
 UM -> UM : generateInvitationToken()
@@ -87,9 +87,9 @@ SP -> SC : createPaymentChannel(data)
 SC -> PCM : create(data)
 SC --> SP : showSuccess()
 
-== Aktivasi Akun (Pengguna Baru) ==
+== Aktivasi Akun (Staff Baru) ==
 
-actor "Pengguna Baru" as NewUser
+actor "Staff Baru" as NewUser
 participant "ActivationPage" as AP
 participant "ActivateController" as ATC
 
@@ -114,7 +114,7 @@ end
 
 == Stock Opname (Inventori) ==
 
-actor "Bagian Inventori" as Inv
+actor "Staff Inventori" as Inv
 participant "HitungPage" as HP
 participant "HitungController" as HC
 participant "Hitung Model" as HM

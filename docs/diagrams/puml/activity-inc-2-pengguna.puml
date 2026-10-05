@@ -9,7 +9,7 @@ start
 :Sistem menampilkan daftar pengguna;
 
 if (Aksi?) then (Tambah)
-    :Mengisi form pengguna baru;
+    :Mengisi form Staff Baru;
     :Memasukkan email valid;
     :Menyimpan data;
     :Sistem mengirim email undangan;

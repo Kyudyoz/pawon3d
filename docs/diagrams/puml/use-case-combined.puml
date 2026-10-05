@@ -8,11 +8,11 @@ title Use Case Diagram\nSistem Manajemen Toko Kue Pawon3D\n(Increment 1 & 2)
 left to right direction
 
 ' == Aktor ==
-actor "Bagian Inventori" as Inventory
-actor "Bagian Produksi" as Production
+actor "Staff Inventori" as Inventory
+actor "Staff Produksi" as Production
 actor "Kasir" as Cashier
 actor "Admin" as Admin
-actor "Pengguna Baru" as NewUser
+actor "Staff Baru" as NewUser
 
 ' == Sistem ==
 rectangle "Sistem Pawon3D" {
@@ -132,7 +132,7 @@ rectangle "Sistem Pawon3D" {
     }
 }
 
-' == Relasi Bagian Inventori ==
+' == Relasi Staff Inventori ==
 Inventory --> UC_Login
 Inventory --> UC_Logout
 Inventory --> UC_ViewKategori
@@ -161,7 +161,7 @@ Inventory --> UC_Laporan
 Inventory --> UC_Notifikasi
 Inventory --> UC_Profil
 
-' == Relasi Bagian Produksi ==
+' == Relasi Staff Produksi ==
 Production --> UC_Login
 Production --> UC_Logout
 Production --> UC_ViewProduksi
@@ -203,7 +203,7 @@ Admin --> UC_ExportLaporan
 Admin --> UC_Notifikasi
 Admin --> UC_Profil
 
-' == Relasi Pengguna Baru ==
+' == Relasi Staff Baru ==
 NewUser --> UC_Aktivasi
 NewUser --> UC_SetPassword
 

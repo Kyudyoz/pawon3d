@@ -5,7 +5,7 @@ skinparam activityShape octagon
 title Activity Diagram\nMengelola Satuan & Konversi
 
 start
-:Bagian Inventori mengakses halaman satuan;
+:Staff Inventori mengakses halaman satuan;
 :Sistem menampilkan daftar satuan;
 
 if (Jenis Satuan?) then (Satuan Dasar)

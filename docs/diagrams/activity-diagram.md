@@ -15,37 +15,37 @@ Activity diagram menggambarkan alur kerja (workflow) dari proses-proses utama da
 
 ### AD-002: Mengelola Kategori (Inventori)
 
-**Aktor**: Bagian Inventori  
+**Aktor**: Staff Inventori  
 **Deskripsi**: Proses pengelolaan data kategori produk.
 
 ### AD-003: Mengelola Bahan Baku (Inventori)
 
-**Aktor**: Bagian Inventori  
+**Aktor**: Staff Inventori  
 **Deskripsi**: Proses pengelolaan data bahan baku.
 
 ### AD-004: Mengelola Produk & Komposisi (Inventori)
 
-**Aktor**: Bagian Inventori  
+**Aktor**: Staff Inventori  
 **Deskripsi**: Proses pengelolaan produk dengan input komposisi bahan baku dan penetapan harga jual. Alur mencakup: input data produk → tentukan jumlah PCS → tambah komposisi bahan baku (material + satuan + jumlah) → opsional biaya lain → sistem hitung modal (total komposisi + biaya lain) → input harga jual → pilih metode penjualan (Pesanan Reguler/Kotak/Siap Saji).
 
 ### AD-005: Mengelola Supplier (Inventori)
 
-**Aktor**: Bagian Inventori  
+**Aktor**: Staff Inventori  
 **Deskripsi**: Proses pengelolaan data pemasok bahan baku.
 
 ### AD-006: Mengelola Satuan & Konversi (Inventori)
 
-**Aktor**: Bagian Inventori  
+**Aktor**: Staff Inventori  
 **Deskripsi**: Proses pengelolaan satuan produk/bahan dan faktor konversinya.
 
 ### AD-007: Proses Belanja (Inventori)
 
-**Aktor**: Bagian Inventori  
+**Aktor**: Staff Inventori  
 **Deskripsi**: Proses perencanaan dan pelaksanaan belanja bahan baku.
 
 ### AD-008: Proses Produksi (Produksi)
 
-**Aktor**: Bagian Produksi  
+**Aktor**: Staff Produksi  
 **Deskripsi**: Proses eksekusi produksi berdasarkan pesanan atau stok siap beli.
 
 ### AD-009: Membuat Pesanan / POS (Kasir)
@@ -94,19 +94,19 @@ Activity diagram menggambarkan alur kerja (workflow) dari proses-proses utama da
 **Aktor**: Semua pengguna terautentikasi  
 **Deskripsi**: Proses melihat dan mengekspor laporan ke format PDF/Excel.
 
-### AD-017: Aktivasi Akun (Pengguna Baru)
+### AD-017: Aktivasi Akun (Staff Baru)
 
-**Aktor**: Pengguna Baru  
-**Deskripsi**: Proses aktivasi akun oleh pengguna baru melalui email.
+**Aktor**: Staff Baru  
+**Deskripsi**: Proses aktivasi akun oleh Staff Baru melalui email.
 
 ### AD-018: Stock Opname (Inventori)
 
-**Aktor**: Bagian Inventori  
+**Aktor**: Staff Inventori  
 **Deskripsi**: Proses penghitungan dan penyesuaian stok fisik.
 
 ### AD-019: Kelola Alur Persediaan (Inventori)
 
-**Aktor**: Bagian Inventori  
+**Aktor**: Staff Inventori  
 **Deskripsi**: Proses pemantauan log mutasi dan riwayat pergerakan stok.
 
 ### AD-020: Penggunaan Poin Loyalitas (Kasir)

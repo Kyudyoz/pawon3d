@@ -1,5 +1,5 @@
 @startuml Sequence_UC10
-title UC-10: Kelola Shift Kasir
+title UC-10: Buka/Tutup Shift Kasir
 
 actor "Kasir" as User
 participant "Halaman Transaksi\n(livewire/transaction)" as View

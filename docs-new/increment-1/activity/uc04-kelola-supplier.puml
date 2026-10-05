@@ -1,14 +1,14 @@
 @startuml Activity_UC04
 title UC-04: Kelola Supplier
 
-|Bagian Inventori|
+|Staff Inventori|
 start
 :Pengguna memilih menu Supplier;
 
 |Sistem|
 :Sistem menampilkan daftar supplier\n(nama, kontak, dan telepon);
 
-|Bagian Inventori|
+|Staff Inventori|
 fork
   :Menambah Supplier;
   :Pengguna menekan tombol Tambah Supplier;

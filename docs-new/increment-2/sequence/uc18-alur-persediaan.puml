@@ -1,7 +1,7 @@
 @startuml Sequence_UC18
 title UC-18: Kelola Alur Persediaan
 
-actor "Bagian Inventori" as User
+actor "Staff Inventori" as User
 participant "Halaman Alur\n(livewire/alur)" as View
 participant "Alur\\Index\n(Livewire)" as Component
 participant "InventoryLog Model" as LogModel

@@ -5,7 +5,7 @@ skinparam activityShape octagon
 title Activity Diagram\nMengelola Bahan Baku
 
 start
-:Bagian Inventori mengakses halaman bahan baku;
+:Staff Inventori mengakses halaman bahan baku;
 :Sistem menampilkan daftar bahan dengan status;
 
 if (Aksi?) then (Tambah)

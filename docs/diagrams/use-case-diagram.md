@@ -10,20 +10,20 @@ Use case diagram Sistem Manajemen Toko Kue Pawon3D menggambarkan interaksi antar
 
 Sistem Pawon3D melibatkan beberapa aktor dengan hak akses berbeda:
 
-| Aktor                | Deskripsi                                                                        |
-| -------------------- | -------------------------------------------------------------------------------- |
-| **Bagian Inventori** | Pengguna yang mengelola data master, bahan baku, supplier, produk, dan belanja   |
-| **Bagian Produksi**  | Pengguna yang mengelola proses produksi                                          |
-| **Kasir**            | Pengguna yang menangani transaksi penjualan                                      |
-| **Admin**            | Pengguna dengan hak akses untuk mengelola pengguna, peran, dan pengaturan sistem |
-| **Pengguna Baru**    | Pengguna yang baru diundang dan melakukan aktivasi akun                          |
-| **Pengunjung**       | Pengguna umum yang mengakses landing page tanpa harus login                      |
+| Aktor               | Deskripsi                                                                        |
+| ------------------- | -------------------------------------------------------------------------------- |
+| **Staff Inventori** | Pengguna yang mengelola data master, bahan baku, supplier, produk, dan belanja   |
+| **Staff Produksi**  | Pengguna yang mengelola proses produksi                                          |
+| **Kasir**           | Pengguna yang menangani transaksi penjualan                                      |
+| **Admin**           | Pengguna dengan hak akses untuk mengelola pengguna, peran, dan pengaturan sistem |
+| **Staff Baru**      | Pengguna yang baru diundang dan melakukan aktivasi akun                          |
+| **Pengunjung**      | Pengguna umum yang mengakses landing page tanpa harus login                      |
 
 ---
 
 ## Use Case Increment 1: Modul Inti Operasional
 
-### Bagian Inventori
+### Staff Inventori
 
 | ID UC | Kelompok Fitur  | Use Case Fungsional       | Deskripsi Singkat                                            |
 | ----- | --------------- | ------------------------- | ------------------------------------------------------------ |
@@ -37,7 +37,7 @@ Sistem Pawon3D melibatkan beberapa aktor dengan hak akses berbeda:
 
 ---
 
-### Bagian Produksi
+### Staff Produksi
 
 | ID UC | Kelompok Fitur  | Use Case Fungsional | Deskripsi Singkat                                                         |
 | ----- | --------------- | ------------------- | ------------------------------------------------------------------------- |
@@ -52,7 +52,7 @@ Sistem Pawon3D melibatkan beberapa aktor dengan hak akses berbeda:
 | ----- | --------------- | ---------------------------- | --------------------------------------------------------------------- |
 | UC-01 | **Autentikasi** | Login & Logout               | Autentikasi untuk mengakses modul kasir/POS                           |
 | UC-09 | **Transaksi**   | Membuat Pesanan & Pembayaran | Memproses penjualan produk (Kotak, Reguler, Siap Beli) dan pembayaran |
-| UC-10 | **Shift**       | Kelola Shift Kasir           | Membuka dan menutup shift kasir harian                                |
+| UC-10 | **Shift**       | Buka/Tutup Shift Kasir       | Membuka dan menutup shift kasir harian                                |
 
 ---
 
@@ -70,7 +70,7 @@ Sistem Pawon3D melibatkan beberapa aktor dengan hak akses berbeda:
 
 ---
 
-### Pengguna Baru
+### Staff Baru
 
 | ID UC | Kelompok Fitur | Use Case Fungsional | Deskripsi Singkat                                    |
 | ----- | -------------- | ------------------- | ---------------------------------------------------- |
@@ -78,7 +78,7 @@ Sistem Pawon3D melibatkan beberapa aktor dengan hak akses berbeda:
 
 ---
 
-### Bagian Inventori (Increment 2)
+### Staff Inventori (Increment 2)
 
 | ID UC | Kelompok Fitur   | Use Case Fungsional    | Deskripsi Singkat                                 |
 | ----- | ---------------- | ---------------------- | ------------------------------------------------- |
@@ -153,7 +153,7 @@ Diagram use case lengkap tersedia dalam format PlantUML pada berkas berikut:
 | ----------------------- | ------------------------------------------------------- | ------------------------------ |
 | **Nama Use Case**       | Kelola Kategori Produk                                  |
 | **ID Use Case**         | UC-02                                                   |
-| **Aktor**               | Bagian Inventori                                        |
+| **Aktor**               | Staff Inventori                                         |
 | **Deskripsi**           | Mengelola pengelompokan produk                          |
 | **Kondisi Awal**        | Aktor berada di halaman Kategori Produk                 |
 | **Skenario Utama**      | **Aksi Aktor**                                          | **Respon Sistem**              |
@@ -169,7 +169,7 @@ Diagram use case lengkap tersedia dalam format PlantUML pada berkas berikut:
 | ----------------------- | -------------------------------------------------------- | ----------------------------- |
 | **Nama Use Case**       | Kelola Satuan & Konversi                                 |
 | **ID Use Case**         | UC-03                                                    |
-| **Aktor**               | Bagian Inventori                                         |
+| **Aktor**               | Staff Inventori                                          |
 | **Deskripsi**           | Mengelola unit ukuran dan faktor konversinya             |
 | **Kondisi Awal**        | Aktor berada di halaman Satuan                           |
 | **Skenario Utama**      | **Aksi Aktor**                                           | **Respon Sistem**             |
@@ -185,7 +185,7 @@ Diagram use case lengkap tersedia dalam format PlantUML pada berkas berikut:
 | ----------------------- | -------------------------------------------------------------------------- | --------------------------------- |
 | **Nama Use Case**       | Kelola Supplier                                                            |
 | **ID Use Case**         | UC-04                                                                      |
-| **Aktor**               | Bagian Inventori                                                           |
+| **Aktor**               | Staff Inventori                                                            |
 | **Deskripsi**           | Mengelola data mitra/pemasok bahan baku                                    |
 | **Kondisi Awal**        | Aktor berada di halaman Supplier                                           |
 | **Skenario Utama**      | **Aksi Aktor**                                                             | **Respon Sistem**                 |
@@ -201,7 +201,7 @@ Diagram use case lengkap tersedia dalam format PlantUML pada berkas berikut:
 | ----------------------- | ----------------------------------------------------------------------- | ----------------------------------- |
 | **Nama Use Case**       | Kelola Bahan Baku                                                       |
 | **ID Use Case**         | UC-05                                                                   |
-| **Aktor**               | Bagian Inventori                                                        |
+| **Aktor**               | Staff Inventori                                                         |
 | **Deskripsi**           | Mengelola data teknis dan stok bahan baku dasar                         |
 | **Kondisi Awal**        | Aktor berada di halaman Manajemen Bahan Baku                            |
 | **Skenario Utama**      | **Aksi Aktor**                                                          | **Respon Sistem**                   |
@@ -218,7 +218,7 @@ Diagram use case lengkap tersedia dalam format PlantUML pada berkas berikut:
 | ----------------------- | --------------------------------------------------------------------------- | ------------------------------------- |
 | **Nama Use Case**       | Kelola Belanja                                                              |
 | **ID Use Case**         | UC-06                                                                       |
-| **Aktor**               | Bagian Inventori                                                            |
+| **Aktor**               | Staff Inventori                                                             |
 | **Deskripsi**           | Merencanakan dan mencatat pembelian bahan baku                              |
 | **Kondisi Awal**        | Aktor berada di halaman Belanja                                             |
 | **Skenario Utama**      | **Aksi Aktor**                                                              | **Respon Sistem**                     |
@@ -235,7 +235,7 @@ Diagram use case lengkap tersedia dalam format PlantUML pada berkas berikut:
 | ----------------------- | ----------------------------------------------------------------------- | ----------------------- |
 | **Nama Use Case**       | Kelola Produk & Komposisi                                               |
 | **ID Use Case**         | UC-07                                                                   |
-| **Aktor**               | Bagian Inventori                                                        |
+| **Aktor**               | Staff Inventori                                                         |
 | **Deskripsi**           | Mengatur produk jadi dan resep bahan bakunya                            |
 | **Kondisi Awal**        | Aktor berada di halaman Produk                                          |
 | **Skenario Utama**      | **Aksi Aktor**                                                          | **Respon Sistem**       |
@@ -251,7 +251,7 @@ Diagram use case lengkap tersedia dalam format PlantUML pada berkas berikut:
 | ----------------------- | ------------------------------------------------------------------------------------- | ----------------------------------------- |
 | **Nama Use Case**       | Kelola Produksi                                                                       |
 | **ID Use Case**         | UC-08                                                                                 |
-| **Aktor**               | Bagian Produksi                                                                       |
+| **Aktor**               | Staff Produksi                                                                        |
 | **Deskripsi**           | Mengelola antrian pesanan, melaksanakan proses produksi, dan melihat riwayat produksi |
 | **Kondisi Awal**        | Aktor berada di halaman Produksi                                                      |
 | **Skenario Utama**      | **Aksi Aktor**                                                                        | **Respon Sistem**                         |
@@ -280,11 +280,11 @@ Diagram use case lengkap tersedia dalam format PlantUML pada berkas berikut:
 | **Kesimpulan**          | Transaksi berhasil dibuat dan dibayar (atau disimpan sebagai draft)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | **Kondisi Akhir**       | Status transaksi menjadi 'Draft' (jika simpan) atau 'Belum Diproses'/'Selesai' (jika bayar)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
-#### UC-10: Kelola Shift Kasir
+#### UC-10: Buka/Tutup Shift Kasir
 
 | Elemen                  | Deskripsi                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Nama Use Case**       | Kelola Shift Kasir                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| **Nama Use Case**       | Buka/Tutup Shift Kasir                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | **ID Use Case**         | UC-10                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | **Aktor**               | Kasir                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | **Deskripsi**           | Membuka dan menutup shift kasir harian untuk mencatat aktivitas transaksi dan kas per shift                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
@@ -305,7 +305,7 @@ Diagram use case lengkap tersedia dalam format PlantUML pada berkas berikut:
 | **Deskripsi**           | Mengelola akses pekerja melalui sistem undangan email        |
 | **Kondisi Awal**        | Aktor berada di halaman Manajemen Pekerja                    |
 | **Skenario Utama**      | **Aksi Aktor**                                               | **Respon Sistem**                        |
-|                         | 1. Menambah email pengguna baru                              | 2. Membuat token aktivasi unik           |
+|                         | 1. Menambah email Staff Baru                                 | 2. Membuat token aktivasi unik           |
 |                         | 3. Memilih peran (Role)                                      | 4. Mengirim undangan via email           |
 |                         |                                                              | 5. Mencatat user dengan status "Pending" |
 | **Skenario Alternatif** | Alt. 1: Email sudah terdaftar. Sistem tampilkan pesan error. |
@@ -395,8 +395,8 @@ Diagram use case lengkap tersedia dalam format PlantUML pada berkas berikut:
 | ----------------------- | --------------------------------------------------------------- | ----------------------------------------- |
 | **Nama Use Case**       | Aktivasi Akun                                                   |
 | **ID Use Case**         | UC-16                                                           |
-| **Aktor**               | Pengguna Baru                                                   |
-| **Deskripsi**           | Proses aktivasi akun bagi pengguna baru melalui email           |
+| **Aktor**               | Staff Baru                                                      |
+| **Deskripsi**           | Proses aktivasi akun bagi Staff Baru melalui email              |
 | **Kondisi Awal**        | Pengguna membuka tautan aktivasi dari email                     |
 | **Skenario Utama**      | **Aksi Aktor**                                                  | **Respon Sistem**                         |
 |                         | 1. Mengisi password baru                                        | 2. Memvalidasi kekuatan password          |
@@ -412,7 +412,7 @@ Diagram use case lengkap tersedia dalam format PlantUML pada berkas berikut:
 | ----------------------- | --------------------------------------------------------------- | ------------------------------------------- |
 | **Nama Use Case**       | Stock Opname (Hitung Stok)                                      |
 | **ID Use Case**         | UC-17                                                           |
-| **Aktor**               | Bagian Inventori                                                |
+| **Aktor**               | Staff Inventori                                                 |
 | **Deskripsi**           | Melakukan penyesuaian stok sistem dengan stok fisik             |
 | **Kondisi Awal**        | Aktor berada di halaman Hitung Stok                             |
 | **Skenario Utama**      | **Aksi Aktor**                                                  | **Respon Sistem**                           |
@@ -430,7 +430,7 @@ Diagram use case lengkap tersedia dalam format PlantUML pada berkas berikut:
 | ----------------------- | --------------------------------------------------------------- | ------------------------------- |
 | **Nama Use Case**       | Kelola Alur Persediaan                                          |
 | **ID Use Case**         | UC-18                                                           |
-| **Aktor**               | Bagian Inventori                                                |
+| **Aktor**               | Staff Inventori                                                 |
 | **Deskripsi**           | Memantau mutasi dan riwayat pergerakan stok secara detail       |
 | **Kondisi Awal**        | Aktor berada di halaman Log Persediaan                          |
 | **Skenario Utama**      | **Aksi Aktor**                                                  | **Respon Sistem**               |

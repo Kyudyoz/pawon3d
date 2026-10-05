@@ -9,10 +9,10 @@ left to right direction
 
 ' == Aktor ==
 actor "Admin" as Admin
-actor "Pengguna Baru" as NewUser
-actor "Bagian Inventori" as Inventory
+actor "Staff Baru" as NewUser
+actor "Staff Inventori" as Inventory
 actor "Kasir" as Cashier
-actor "Bagian Produksi" as Production
+actor "Staff Produksi" as Production
 actor "Pengunjung" as Visitor
 
 ' == Sistem ==
@@ -27,7 +27,7 @@ rectangle "Sistem Pawon3D - Increment 2" {
     ' -- Pengelolaan Pengguna --
     package "Pengelolaan Pengguna" {
         usecase "Mengakses Halaman Pekerja" as UC048
-        usecase "Menambah Pengguna Baru" as UC049
+        usecase "Menambah Staff Baru" as UC049
         usecase "Mengubah Data Pengguna" as UC050
         usecase "Mengubah Status Aktif Pengguna" as UC051
     }
@@ -125,11 +125,11 @@ Admin --> UC068
 Admin --> UC069
 Admin --> UC070
 
-' == Relasi Pengguna Baru ==
+' == Relasi Staff Baru ==
 NewUser --> UC071
 NewUser --> UC072
 
-' == Relasi Bagian Inventori ==
+' == Relasi Staff Inventori ==
 Inventory --> UC046
 Inventory --> UC047
 Inventory --> UC073
@@ -161,7 +161,7 @@ Cashier --> UC068
 Cashier --> UC069
 Cashier --> UC070
 
-' == Relasi Bagian Produksi ==
+' == Relasi Staff Produksi ==
 Production --> UC046
 Production --> UC047
 Production --> UC063

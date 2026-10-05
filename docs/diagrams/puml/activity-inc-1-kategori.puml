@@ -5,7 +5,7 @@ skinparam activityShape octagon
 title Activity Diagram\nMengelola Kategori
 
 start
-:Bagian Inventori mengakses halaman kategori;
+:Staff Inventori mengakses halaman kategori;
 :Sistem menampilkan daftar kategori;
 
 if (Aksi?) then (Tambah)

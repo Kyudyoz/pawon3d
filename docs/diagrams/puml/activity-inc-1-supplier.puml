@@ -5,7 +5,7 @@ skinparam activityShape octagon
 title Activity Diagram\nMengelola Supplier
 
 start
-:Bagian Inventori mengakses halaman supplier;
+:Staff Inventori mengakses halaman supplier;
 :Sistem menampilkan daftar supplier;
 
 if (Aksi?) then (Tambah)

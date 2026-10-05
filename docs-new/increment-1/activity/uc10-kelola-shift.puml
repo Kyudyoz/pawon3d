@@ -1,5 +1,5 @@
 @startuml Activity_UC10
-title UC-10: Kelola Shift Kasir
+title UC-10: Buka/Tutup Shift Kasir
 
 |Kasir|
 start

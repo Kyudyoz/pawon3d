@@ -2,9 +2,9 @@
 
 skinparam sequenceMessageAlign center
 
-title Sequence Diagram\nAktivasi Akun Pengguna Baru
+title Sequence Diagram\nAktivasi Akun Staff Baru
 
-actor "Pengguna Baru" as NewUser
+actor "Staff Baru" as NewUser
 participant "ActivationPage" as AP
 participant "ActivateController" as ATC
 participant "User Model" as UM

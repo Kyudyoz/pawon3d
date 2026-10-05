@@ -1,7 +1,7 @@
 @startuml Sequence_UC05
 title UC-05: Kelola Bahan Baku
 
-actor "Bagian Inventori" as User
+actor "Staff Inventori" as User
 participant "Halaman Bahan Baku\n(livewire/material)" as View
 participant "Material\\Form\n(Livewire)" as Component
 participant "Material Model" as MaterialModel

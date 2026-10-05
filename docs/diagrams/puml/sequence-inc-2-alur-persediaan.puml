@@ -4,7 +4,7 @@ skinparam sequenceMessageAlign center
 
 title Sequence Diagram\nKelola Alur Persediaan
 
-actor "Bagian Inventori" as User
+actor "Staff Inventori" as User
 participant "InventoryLogPage" as ILP
 participant "InventoryLogController" as ILC
 participant "InventoryLog" as IL

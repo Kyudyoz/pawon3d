@@ -1,7 +1,7 @@
 @startuml Activity_UC08
 title UC-08: Kelola Produksi
 
-|Bagian Produksi|
+|Staff Produksi|
 start
 :Pengguna memilih menu Produksi;
 
@@ -14,7 +14,7 @@ fork
   |Sistem|
   :Sistem menampilkan daftar pesanan\nyang perlu diproduksi;
 
-  |Bagian Produksi|
+  |Staff Produksi|
   :Pengguna memilih salah satu pesanan\npada antrian produksi;
   :Pengguna meninjau detail produk dan jumlah;
   :Pengguna membuka halaman Mulai Produksi;
@@ -30,7 +30,7 @@ fork
   :Sistem mengurangi stok bahan baku;
   :Sistem memperbarui status produksi;
 
-  |Bagian Produksi|
+  |Staff Produksi|
   :Pengguna menekan tombol Selesaikan Produksi;
 
   |Sistem|
@@ -60,7 +60,7 @@ fork again
   :Sistem menyimpan rencana produksi siap beli;
   :Sistem menampilkan notifikasi sukses;
 
-  |Bagian Produksi|
+  |Staff Produksi|
   :Pengguna membuka rincian produksi siap beli;
   :Pengguna menekan tombol Selesaikan Produksi;
 

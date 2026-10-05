@@ -4,7 +4,7 @@ skinparam sequenceMessageAlign center
 
 title Sequence Diagram\nMengelola Kategori Produk
 
-actor "Bagian Inventori" as Inv
+actor "Staff Inventori" as Inv
 participant "CategoryPage" as CP
 participant "CategoryController" as CC
 participant "Category Model" as CM

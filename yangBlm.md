@@ -2,7 +2,7 @@
 
 ## SELESAI (v)
 
--   [x] Ubah logika matematika di bagian produksi
+-   [x] Ubah logika matematika di Staff Produksi
 -   [x] `is_many` dan `pcs` di produk diubah
 -   [x] Refactor padan
 -   [x] Unique number diubah
@@ -33,7 +33,7 @@
 -   [x] Tambah produksi berlebih ke siap beli
 -   [x] Ubah kolom metode produk
 -   [x] Produk expired dan harga jual
--   [x] Bagian produksi blm
+-   [x] Staff Produksi blm
 -   [x] Pergantian harga bahan di belanja
 -   [x] Pengaturan
 -   [x] Main Title

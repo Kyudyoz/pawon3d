@@ -5,7 +5,7 @@ skinparam activityShape octagon
 title Activity Diagram\nProses Produksi
 
 start
-:Bagian Produksi mengakses halaman produksi;
+:Staff Produksi mengakses halaman produksi;
 :Sistem menampilkan daftar produksi;
 :Mengakses antrian pesanan/produksi;
 :Sistem menampilkan pesanan yang perlu diproduksi;

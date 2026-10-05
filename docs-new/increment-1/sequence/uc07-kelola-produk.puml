@@ -1,7 +1,7 @@
 @startuml Sequence_UC07
-title UC-07: Kelola Produk dan Komposisi
+title UC-07: Kelola Produk
 
-actor "Bagian Inventori" as User
+actor "Staff Inventori" as User
 participant "Halaman Produk\n(livewire/product)" as View
 participant "Product\\Form\n(Livewire)" as Component
 participant "Product Model" as ProductModel

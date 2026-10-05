@@ -1,7 +1,7 @@
 @startuml Sequence_UC16
 title UC-16: Aktivasi Akun
 
-actor "Pengguna Baru" as NewUser
+actor "Staff Baru" as NewUser
 participant "Halaman Aktivasi\n(aktivasi-akun/{token})" as View
 participant "ActivateAccount\n(Livewire)" as Component
 participant "User Model" as UserModel

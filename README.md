@@ -25,7 +25,7 @@ Aplikasi manajemen toko kue berbasis web menggunakan Laravel 12 + Livewire 3.
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/pawon3d/pawon3d.git
+git clone https://github.com/kyudyoz/pawon3d.git
 cd pawon3d
 ```
 

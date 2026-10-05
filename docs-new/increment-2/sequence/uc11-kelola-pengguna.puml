@@ -1,5 +1,5 @@
 @startuml Sequence_UC11
-title UC-11: Kelola Pengguna dan Undangan
+title UC-11: Kelola Pengguna
 
 actor "Admin" as Admin
 participant "Halaman Pekerja\n(livewire/pekerja)" as View

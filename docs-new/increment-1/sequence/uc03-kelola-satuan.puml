@@ -1,7 +1,7 @@
 @startuml Sequence_UC03
-title UC-03: Kelola Satuan dan Konversi
+title UC-03: Kelola Satuan
 
-actor "Bagian Inventori" as User
+actor "Staff Inventori" as User
 participant "Halaman Satuan\n(livewire/unit)" as View
 participant "Unit\\Index\n(Livewire)" as Component
 participant "Unit Model" as UnitModel

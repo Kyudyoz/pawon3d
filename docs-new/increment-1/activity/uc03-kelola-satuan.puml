@@ -1,14 +1,14 @@
 @startuml Activity_UC03
-title UC-03: Kelola Satuan dan Konversi
+title UC-03: Kelola Satuan
 
-|Bagian Inventori|
+|Staff Inventori|
 start
 :Pengguna memilih menu Satuan Ukur;
 
 |Sistem|
 :Sistem menampilkan daftar satuan\n(nama, singkatan, kelompok, faktor konversi);
 
-|Bagian Inventori|
+|Staff Inventori|
 fork
   :Menambah Satuan Dasar;
   :Pengguna menekan tombol Tambah Satuan;

@@ -1,12 +1,12 @@
 @startuml ClassDiagram_Increment2
-title Class Diagram - Increment 2 (UC-01 s.d. UC-26)
+title Class Diagram - Increment 2 (UC-01 s.d. UC-22)
 
 skinparam classAttributeIconSize 0
 skinparam classFontStyle Bold
 
 ' ===== AUTENTIKASI & PENGGUNA =====
 class User {
-  +id: int
+  +id: uuid
   +name: string
   +email: string
   +password: string
@@ -20,14 +20,14 @@ class User {
 }
 
 class Role {
-  +id: int
+  +id: uuid
   +name: string
   +guard_name: string
   +max_users: int
 }
 
 class Permission {
-  +id: int
+  +id: uuid
   +name: string
   +guard_name: string
 }
@@ -37,7 +37,7 @@ Role "*" --> "*" Permission : has permissions
 
 ' ===== PROFIL USAHA =====
 class StoreProfile {
-  +id: int
+  +id: uuid
   +logo: string
   +name: string
   +tagline: string
@@ -56,7 +56,7 @@ class StoreProfile {
 }
 
 class StoreDocument {
-  +id: int
+  +id: uuid
   +document_name: string
   +document_number: string
   +document_file: string
@@ -74,12 +74,12 @@ class Customer {
 }
 
 class PointsHistory {
-  +id: int
+  +id: uuid
   +phone: string
-  +action_id: int|null
+  +action_id: uuid|null
   +action: string
   +points: int
-  +transaction_id: int|null
+  +transaction_id: uuid|null
   +image: string
 }
 Customer "1" *-- "0..*" PointsHistory : poin
@@ -87,24 +87,24 @@ PointsHistory "*" --> "0..1" Transaction
 
 ' ===== KATEGORI & SATUAN =====
 class Category {
-  +id: int
+  +id: uuid
   +name: string
   +is_active: bool
 }
 
 class Unit {
-  +id: int
+  +id: uuid
   +name: string
   +alias: string
   +group: string
-  +base_unit_id: int|null
+  +base_unit_id: uuid|null
   +conversion_factor: float|null
 }
 Unit "*" --> "0..1" Unit : base unit of
 
 ' ===== SUPPLIER =====
 class Supplier {
-  +id: int
+  +id: uuid
   +name: string
   +contact_name: string
   +phone: string
@@ -116,7 +116,7 @@ class Supplier {
 
 ' ===== BAHAN BAKU =====
 class Material {
-  +id: int
+  +id: uuid
   +name: string
   +description: string
   +image: string
@@ -127,9 +127,9 @@ class Material {
 }
 
 class MaterialDetail {
-  +id: int
-  +material_id: int
-  +unit_id: int
+  +id: uuid
+  +material_id: uuid
+  +unit_id: uuid
   +is_main: bool
   +quantity: float
   +supply_quantity: float
@@ -137,9 +137,9 @@ class MaterialDetail {
 }
 
 class MaterialBatch {
-  +id: int
-  +material_id: int
-  +unit_id: int
+  +id: uuid
+  +material_id: uuid
+  +unit_id: uuid
   +batch_number: string
   +date: date
   +batch_quantity: float
@@ -151,10 +151,10 @@ MaterialBatch "*" --> "1" Unit
 
 ' ===== BELANJA =====
 class Expense {
-  +id: int
+  +id: uuid
   +expense_number: string
   +expense_date: date
-  +supplier_id: int
+  +supplier_id: uuid
   +status: string
   +grand_total_expect: decimal
   +grand_total_actual: decimal
@@ -163,10 +163,10 @@ class Expense {
 }
 
 class ExpenseDetail {
-  +id: int
-  +expense_id: int
-  +material_id: int
-  +unit_id: int
+  +id: uuid
+  +expense_id: uuid
+  +material_id: uuid
+  +unit_id: uuid
   +quantity_expect: float
   +quantity_get: float
   +price_expect: decimal
@@ -180,7 +180,7 @@ ExpenseDetail "*" --> "1" Unit
 
 ' ===== PRODUK =====
 class Product {
-  +id: int
+  +id: uuid
   +name: string
   +description: string
   +price: decimal
@@ -192,35 +192,36 @@ class Product {
 }
 
 class ProductComposition {
-  +id: int
-  +product_id: int
-  +material_id: int
-  +unit_id: int
+  +id: uuid
+  +product_id: uuid
+  +material_id: uuid
+  +unit_id: uuid
   +material_quantity: float
 }
 
 class OtherCost {
-  +id: int
-  +product_id: int
-  +type_cost_id: int
+  +id: uuid
+  +product_id: uuid
+  +type_cost_id: uuid
   +price: decimal
 }
 
 class TypeCost {
-  +id: int
+  +id: uuid
   +name: string
 }
 Product "1" *-- "0..*" ProductComposition
 Product "1" *-- "0..*" OtherCost
 Product "*" --> "*" Category : product_categories
 ProductComposition "*" --> "1" Material
+ProductComposition "*" --> "1" Unit
 OtherCost "*" --> "1" TypeCost
 
 ' ===== PRODUKSI =====
 class Production {
-  +id: int
+  +id: uuid
   +production_number: string
-  +transaction_id: int|null
+  +transaction_id: uuid|null
   +method: string
   +date: date
   +status: string
@@ -229,22 +230,30 @@ class Production {
 }
 
 class ProductionDetail {
-  +id: int
-  +production_id: int
-  +product_id: int
+  +id: uuid
+  +production_id: uuid
+  +product_id: uuid
   +quantity_plan: float
   +quantity_get: float
   +quantity_fail: float
   +cycle: int
 }
+class ProductionWorker {
+  +id: uuid
+  +production_id: uuid
+  +user_id: uuid
+}
+
 Production "1" *-- "1..*" ProductionDetail
+Production "1" *-- "0..*" ProductionWorker
+ProductionWorker "*" --> "1" User
 Production "*" --> "0..1" Transaction
 
 ' ===== TRANSAKSI (lengkap Inc2) =====
 class Transaction {
-  +id: int
-  +user_id: int
-  +customer_id: int|null
+  +id: uuid
+  +user_id: uuid
+  +customer_id: string|null
   +invoice_number: string
   +name: string
   +phone: string
@@ -257,13 +266,13 @@ class Transaction {
   +points_discount: decimal
   +total_refund: decimal
   +cancel_reason: string|null
-  +created_by_shift: int
+  +created_by_shift: uuid
 }
 
 class TransactionDetail {
-  +id: int
-  +transaction_id: int
-  +product_id: int
+  +id: uuid
+  +transaction_id: uuid
+  +product_id: uuid
   +quantity: int
   +price: decimal
   +refund_quantity: int
@@ -271,17 +280,17 @@ class TransactionDetail {
 }
 
 class Payment {
-  +id: int
+  +id: uuid
   +receipt_number: string
-  +transaction_id: int
-  +payment_channel_id: int
+  +transaction_id: uuid
+  +payment_channel_id: uuid
   +payment_method: string
   +paid_amount: decimal
   +paid_at: datetime
 }
 
 class PaymentChannel {
-  +id: int
+  +id: uuid
   +type: string
   +group: string
   +bank_name: string
@@ -299,10 +308,10 @@ TransactionDetail "*" --> "1" Product
 
 ' ===== SHIFT =====
 class Shift {
-  +id: int
+  +id: uuid
   +shift_number: string
-  +opened_by: int
-  +closed_by: int|null
+  +opened_by: uuid
+  +closed_by: uuid|null
   +start_time: datetime
   +end_time: datetime|null
   +status: string
@@ -317,8 +326,8 @@ Shift "*" --> "1" User : opened_by
 
 ' ===== STOCK OPNAME =====
 class Hitung {
-  +id: int
-  +user_id: int
+  +id: uuid
+  +user_id: uuid
   +hitung_number: string
   +action: string
   +note: string
@@ -331,10 +340,10 @@ class Hitung {
 }
 
 class HitungDetail {
-  +id: int
-  +hitung_id: int
-  +material_id: int
-  +material_batch_id: int|null
+  +id: uuid
+  +hitung_id: uuid
+  +material_id: uuid
+  +material_batch_id: uuid|null
   +quantity_expect: decimal
   +quantity_actual: decimal
   +total: decimal
@@ -347,21 +356,21 @@ HitungDetail "*" --> "0..1" MaterialBatch
 
 ' ===== INVENTORY LOG & NOTIFIKASI =====
 class InventoryLog {
-  +id: int
-  +material_id: int
-  +material_batch_id: int|null
-  +user_id: int
+  +id: uuid
+  +material_id: uuid
+  +material_batch_id: uuid|null
+  +user_id: uuid
   +action: string
   +quantity_change: float
   +quantity_after: float
   +reference_type: string
-  +reference_id: int
+  +reference_id: uuid
   +note: string
 }
 
 class Notification {
-  +id: int
-  +user_id: int
+  +id: uuid
+  +user_id: uuid
   +title: string
   +body: string
   +type: string

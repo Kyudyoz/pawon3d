@@ -35,7 +35,7 @@ beforeEach(function () {
     $this->user->givePermissionTo($permission);
 });
 
-// TC-139: Bagian Inventori mengakses halaman hitung
+// TC-139: Staff Inventori mengakses halaman hitung
 test('user can access hitung page', function () {
     $response = $this->actingAs($this->user)->get(route('hitung'));
 
@@ -44,7 +44,7 @@ test('user can access hitung page', function () {
 });
 
 // TC-139 riwayat sub: akses halaman riwayat hitung
-// TC-149: Bagian Inventori melihat riwayat hitung
+// TC-149: Staff Inventori melihat riwayat hitung
 test('user can access riwayat hitung page', function () {
     $response = $this->actingAs($this->user)->get(route('hitung.riwayat'));
 
@@ -52,7 +52,7 @@ test('user can access riwayat hitung page', function () {
     $response->assertSeeLivewire(Riwayat::class);
 });
 
-// TC-140: Bagian Inventori membuat rencana hitung dengan data valid
+// TC-140: Staff Inventori membuat rencana hitung dengan data valid
 test('can create hitung with valid data', function () {
     $unit = Unit::create(['name' => 'Kilogram', 'alias' => 'kg', 'group' => 'berat']);
     $material = Material::create(['name' => 'Tepung Terigu', 'is_active' => true, 'status' => 'tersedia']);
@@ -66,37 +66,41 @@ test('can create hitung with valid data', function () {
     Livewire::actingAs($this->user)
         ->test(Form::class)
         ->set('action', 'Hitung Persediaan')
-        ->set('hitung_details', [[
-            'material_id' => (string) $material->id,
-            'material_batch_id' => (string) $batch->id,
-            'material_quantity' => 10,
-            'quantity_actual' => 0,
-            'unit_name' => ' (kg)',
-            'total' => 0,
-        ]])
+        ->set('hitung_details', [
+            [
+                'material_id' => (string) $material->id,
+                'material_batch_id' => (string) $batch->id,
+                'material_quantity' => 10,
+                'quantity_actual' => 0,
+                'unit_name' => ' (kg)',
+                'total' => 0,
+            ]
+        ])
         ->call('save')
         ->assertHasNoErrors()
         ->assertRedirect(route('hitung.rencana'));
 });
 
-// TC-141: Bagian Inventori membuat rencana hitung tanpa memilih bahan baku
+// TC-141: Staff Inventori membuat rencana hitung tanpa memilih bahan baku
 test('validates material is required when creating hitung', function () {
     Livewire::actingAs($this->user)
         ->test(Form::class)
         ->set('action', 'Hitung Persediaan')
-        ->set('hitung_details', [[
-            'material_id' => '',
-            'material_batch_id' => '',
-            'material_quantity' => 0,
-            'quantity_actual' => 0,
-            'unit_name' => ' (satuan)',
-            'total' => 0,
-        ]])
+        ->set('hitung_details', [
+            [
+                'material_id' => '',
+                'material_batch_id' => '',
+                'material_quantity' => 0,
+                'quantity_actual' => 0,
+                'unit_name' => ' (satuan)',
+                'total' => 0,
+            ]
+        ])
         ->call('save')
         ->assertHasErrors(['hitung_details.0.material_id']);
 });
 
-// TC-142: Bagian Inventori membuat rencana hitung tanpa memilih batch
+// TC-142: Staff Inventori membuat rencana hitung tanpa memilih batch
 test('validates batch is required when creating hitung', function () {
     $unit = Unit::create(['name' => 'Gram', 'alias' => 'g', 'group' => 'berat']);
     $material = Material::create(['name' => 'Gula Pasir', 'is_active' => true, 'status' => 'tersedia']);
@@ -104,19 +108,21 @@ test('validates batch is required when creating hitung', function () {
     Livewire::actingAs($this->user)
         ->test(Form::class)
         ->set('action', 'Hitung Persediaan')
-        ->set('hitung_details', [[
-            'material_id' => (string) $material->id,
-            'material_batch_id' => '',
-            'material_quantity' => 0,
-            'quantity_actual' => 0,
-            'unit_name' => ' (g)',
-            'total' => 0,
-        ]])
+        ->set('hitung_details', [
+            [
+                'material_id' => (string) $material->id,
+                'material_batch_id' => '',
+                'material_quantity' => 0,
+                'quantity_actual' => 0,
+                'unit_name' => ' (g)',
+                'total' => 0,
+            ]
+        ])
         ->call('save')
         ->assertHasErrors(['hitung_details.0.material_batch_id']);
 });
 
-// TC-143: Bagian Inventori membuat rencana hitung tanpa memilih jenis aksi
+// TC-143: Staff Inventori membuat rencana hitung tanpa memilih jenis aksi
 test('validates action is required when creating hitung', function () {
     Livewire::actingAs($this->user)
         ->test(Form::class)
@@ -125,7 +131,7 @@ test('validates action is required when creating hitung', function () {
         ->assertHasErrors(['action']);
 });
 
-// TC-144: Bagian Inventori memulai penghitungan stok
+// TC-144: Staff Inventori memulai penghitungan stok
 test('can start hitung from rincian page', function () {
     $hitung = Hitung::create([
         'user_id' => $this->user->id,
@@ -148,7 +154,7 @@ test('can start hitung from rincian page', function () {
     expect((bool) $hitung->is_start)->toBeTrue();
 });
 
-// TC-145: Bagian Inventori memasukkan kuantitas aktual pada hitung persediaan (valid)
+// TC-145: Staff Inventori memasukkan kuantitas aktual pada hitung persediaan (valid)
 test('can save valid quantity on mulai hitung', function () {
     $unit = Unit::create(['name' => 'Kilogram', 'alias' => 'kg', 'group' => 'berat']);
     $material = Material::create(['name' => 'Tepung Beras', 'is_active' => true, 'status' => 'tersedia']);
@@ -185,7 +191,7 @@ test('can save valid quantity on mulai hitung', function () {
         ->assertHasNoErrors();
 });
 
-// TC-146: Bagian Inventori memasukkan kuantitas negatif pada hitung
+// TC-146: Staff Inventori memasukkan kuantitas negatif pada hitung
 test('validates quantity cannot be negative on mulai hitung', function () {
     $unit = Unit::create(['name' => 'Liter', 'alias' => 'L', 'group' => 'volume']);
     $material = Material::create(['name' => 'Minyak Goreng', 'is_active' => true, 'status' => 'tersedia']);
@@ -222,7 +228,7 @@ test('validates quantity cannot be negative on mulai hitung', function () {
         ->assertHasErrors(['hitungDetails.0.quantity_input']);
 });
 
-// TC-147: Bagian Inventori memasukkan kuantitas rusak/hilang melebihi stok tersedia
+// TC-147: Staff Inventori memasukkan kuantitas rusak/hilang melebihi stok tersedia
 test('shows error when quantity exceeds available stock on rusak action', function () {
     $unit = Unit::create(['name' => 'Pcs', 'alias' => 'pcs', 'group' => 'unit']);
     $material = Material::create(['name' => 'Coklat Bubuk', 'is_active' => true, 'status' => 'tersedia']);
@@ -260,7 +266,7 @@ test('shows error when quantity exceeds available stock on rusak action', functi
     expect($component->get('errorInputs'))->not->toBeEmpty();
 });
 
-// TC-148: Bagian Inventori menyelesaikan perhitungan stok
+// TC-148: Staff Inventori menyelesaikan perhitungan stok
 test('can finish hitung from rincian page', function () {
     $unit = Unit::create(['name' => 'Kg', 'alias' => 'kg', 'group' => 'berat']);
     $material = Material::create(['name' => 'Bahan Tes', 'is_active' => true, 'status' => 'tersedia']);

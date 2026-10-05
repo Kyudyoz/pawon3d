@@ -1,7 +1,7 @@
 @startuml Sequence_UC02
 title UC-02: Kelola Kategori Produk
 
-actor "Bagian Inventori" as User
+actor "Staff Inventori" as User
 participant "Halaman Kategori\n(livewire/category)" as View
 participant "Category\\Index\n(Livewire)" as Component
 participant "Category Model" as CategoryModel

@@ -1,14 +1,14 @@
 @startuml Activity_UC07
-title UC-07: Kelola Produk dan Komposisi
+title UC-07: Kelola Produk
 
-|Bagian Inventori|
+|Staff Inventori|
 start
 :Pengguna memilih menu Produk;
 
 |Sistem|
 :Sistem menampilkan daftar produk\n(nama, harga, metode, dan status);
 
-|Bagian Inventori|
+|Staff Inventori|
 fork
   :Menambah Produk;
   :Pengguna menekan tombol Tambah Produk;

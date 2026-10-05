@@ -1,26 +1,26 @@
 @startuml Activity_UC18
 title UC-18: Kelola Alur Persediaan
 
-|Bagian Inventori|
+|Staff Inventori|
 start
 :Pengguna membuka halaman Alur Persediaan;
 
 |Sistem|
 :Sistem menampilkan daftar log pergerakan\npersediaan (masuk, keluar, penyesuaian)\ndiurutkan dari terbaru;
 
-|Bagian Inventori|
+|Staff Inventori|
 :Pengguna memfilter berdasarkan:\n- Bahan baku tertentu\n- Jenis aksi (belanja, produksi, stock opname)\n- Rentang tanggal;
 
 |Sistem|
 :Sistem memperbarui tampilan\nsesuai filter yang diterapkan;
 
-|Bagian Inventori|
+|Staff Inventori|
 :Pengguna menekan salah satu entri log;
 
 |Sistem|
 :Sistem menampilkan rincian log:\n- Referensi (nomor belanja/produksi/opname)\n- Jumlah perubahan stok\n- Stok setelah perubahan\n- Pengguna yang melakukan perubahan;
 
-|Bagian Inventori|
+|Staff Inventori|
 :Pengguna menekan tautan referensi\nuntuk melihat dokumen asal;
 
 |Sistem|

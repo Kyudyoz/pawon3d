@@ -1,14 +1,14 @@
 @startuml Activity_UC17
 title UC-17: Kelola Stock Opname
 
-|Bagian Inventori|
+|Staff Inventori|
 start
 :Pengguna membuka halaman Stock Opname;
 
 |Sistem|
 :Sistem menampilkan daftar sesi stock opname\nbeserta statusnya;
 
-|Bagian Inventori|
+|Staff Inventori|
 :Pengguna menekan tombol Mulai Stock Opname;
 
 |Sistem|
@@ -16,7 +16,7 @@ start
 :Sistem membuat item untuk setiap\nbatch bahan baku yang ada;
 :Sistem menampilkan daftar bahan baku\nbeserta jumlah ekspektasi sistem;
 
-|Bagian Inventori|
+|Staff Inventori|
 :Pengguna mengisi jumlah aktual\nuntuk setiap bahan baku;
 :Pengguna menekan tombol Simpan;
 
@@ -24,7 +24,7 @@ start
 :Sistem menyimpan perubahan;
 :Sistem menampilkan selisih antara\njumlah aktual dan ekspektasi;
 
-|Bagian Inventori|
+|Staff Inventori|
 :Pengguna menekan tombol Selesaikan Stock Opname;
 
 |Sistem|

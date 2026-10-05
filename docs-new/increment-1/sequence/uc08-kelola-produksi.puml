@@ -1,7 +1,7 @@
 @startuml Sequence_UC08
 title UC-08: Kelola Produksi
 
-actor "Bagian Produksi" as User
+actor "Staff Produksi" as User
 participant "Halaman Produksi\n(livewire/production)" as View
 participant "Production\\AntrianProduksi\n(Livewire)" as AntrianComponent
 participant "Production\\Mulai\n(Livewire)" as MulaiComponent

@@ -1,7 +1,7 @@
 @startuml Activity_UC16
 title UC-16: Aktivasi Akun
 
-|Pengguna Baru|
+|Staff Baru|
 start
 :Pengguna menerima email undangan\nyang berisi tautan aktivasi;
 :Pengguna membuka tautan aktivasi;
@@ -14,7 +14,7 @@ else (Tidak)
 endif
 :Sistem menampilkan formulir\npengaturan kata sandi baru;
 
-|Pengguna Baru|
+|Staff Baru|
 :Pengguna mengisi kata sandi baru;
 :Pengguna mengonfirmasi kata sandi;
 :Pengguna menekan tombol Aktivasi;

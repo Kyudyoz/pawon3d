@@ -1,14 +1,14 @@
 @startuml Activity_UC05
 title UC-05: Kelola Bahan Baku
 
-|Bagian Inventori|
+|Staff Inventori|
 start
 :Pengguna memilih menu Bahan Baku;
 
 |Sistem|
 :Sistem menampilkan daftar bahan baku\n(nama, status stok, dan satuan utama);
 
-|Bagian Inventori|
+|Staff Inventori|
 fork
   :Menambah Bahan Baku;
   :Pengguna menekan tombol Tambah Bahan Baku;

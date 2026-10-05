@@ -4,7 +4,7 @@ skinparam sequenceMessageAlign center
 
 title Sequence Diagram\nProses Belanja Bahan Baku
 
-actor "Bagian Inventori" as Inv
+actor "Staff Inventori" as Inv
 participant "ExpensePage" as EP
 participant "ExpenseController" as EC
 participant "Expense" as EX

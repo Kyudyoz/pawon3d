@@ -10,7 +10,7 @@ start
 :Sistem menampilkan daftar pengguna;
 
 if (Aksi?) then (Tambah)
-    :Mengisi form pengguna baru;
+    :Mengisi form Staff Baru;
     :Memasukkan email valid;
     :Menyimpan data;
     :Sistem mengirim email undangan;
@@ -75,9 +75,9 @@ start
 :Sistem menampilkan riwayat transaksi dan poin;
 stop
 
-|#LightCoral|Aktivasi Akun (Pengguna Baru)|
+|#LightCoral|Aktivasi Akun (Staff Baru)|
 start
-:Pengguna baru menerima email undangan;
+:Staff Baru menerima email undangan;
 :Mengakses link aktivasi valid;
 :Sistem memvalidasi token;
 
@@ -94,7 +94,7 @@ endif
 
 |#Lavender|Stock Opname (Inventori)|
 start
-:Bagian Inventori mengakses halaman hitung;
+:Staff Inventori mengakses halaman hitung;
 :Sistem menampilkan daftar rencana hitung;
 :Membuat rencana hitung;
 :Sistem generate nomor HC-YYMMDD-XXXX;

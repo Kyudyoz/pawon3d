@@ -1,14 +1,14 @@
 @startuml Activity_UC02
 title UC-02: Kelola Kategori Produk
 
-|Bagian Inventori|
+|Staff Inventori|
 start
 :Pengguna memilih menu Kategori;
 
 |Sistem|
 :Sistem menampilkan daftar kategori\nbeserta nama, status, dan jumlah produk;
 
-|Bagian Inventori|
+|Staff Inventori|
 fork
   :Menambah Kategori;
   :Pengguna menekan tombol Tambah Kategori;

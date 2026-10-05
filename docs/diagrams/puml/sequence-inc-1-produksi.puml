@@ -4,7 +4,7 @@ skinparam sequenceMessageAlign center
 
 title Sequence Diagram\nProses Produksi
 
-actor "Bagian Produksi" as Prod
+actor "Staff Produksi" as Prod
 participant "ProductionPage" as PP
 participant "ProductionController" as PC
 participant "Production" as PR

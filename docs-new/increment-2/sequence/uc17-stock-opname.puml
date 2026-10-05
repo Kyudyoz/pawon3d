@@ -1,7 +1,7 @@
 @startuml Sequence_UC17
 title UC-17: Kelola Stock Opname
 
-actor "Bagian Inventori" as User
+actor "Staff Inventori" as User
 participant "Halaman Stock Opname\n(livewire/hitung)" as View
 participant "Hitung\\Index\n(Livewire)" as Component
 participant "Hitung Model" as HitungModel

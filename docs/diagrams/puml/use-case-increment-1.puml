@@ -8,8 +8,8 @@ title Use Case Diagram - Increment 1\nSistem Manajemen Toko Kue Pawon3D\nModul I
 left to right direction
 
 ' == Aktor ==
-actor "Bagian Inventori" as Inventory
-actor "Bagian Produksi" as Production
+actor "Staff Inventori" as Inventory
+actor "Staff Produksi" as Production
 actor "Kasir" as Cashier
 
 ' == Sistem ==
@@ -102,7 +102,7 @@ rectangle "Sistem Pawon3D - Increment 1" {
     }
 }
 
-' == Relasi Bagian Inventori ==
+' == Relasi Staff Inventori ==
 Inventory --> UC001
 Inventory --> UC002
 Inventory --> UC003
@@ -128,7 +128,7 @@ Inventory --> UC022
 Inventory --> UC023
 Inventory --> UC024
 
-' == Relasi Bagian Produksi ==
+' == Relasi Staff Produksi ==
 Production --> UC001
 Production --> UC002
 Production --> UC027

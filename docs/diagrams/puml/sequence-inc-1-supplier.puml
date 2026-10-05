@@ -4,7 +4,7 @@ skinparam sequenceMessageAlign center
 
 title Sequence Diagram\nMengelola Supplier
 
-actor "Bagian Inventori" as Inv
+actor "Staff Inventori" as Inv
 participant "SupplierPage" as SP
 participant "SupplierController" as SC
 participant "Supplier Model" as SM

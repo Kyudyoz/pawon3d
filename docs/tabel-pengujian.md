@@ -59,7 +59,7 @@ Increment 2 mencakup **TC-083 sampai TC-177**.
 | 6                                         | Profil                              | 3         | 3      |
 | 7                                         | Notifikasi                          | 3         | 3      |
 | 8                                         | Laporan (Filter & Ekspor)           | 5         | 5      |
-| **Pengguna Baru**                         |                                     |           |        |
+| **Staff Baru**                            |                                     |           |        |
 | 9                                         | Aktivasi Akun                       | 8         | 8      |
 | **Inventori (Stock Opname & Persediaan)** |                                     |           |        |
 | 10                                        | Stock Opname (Hitung) & Riwayat     | 11        | 11     |
@@ -88,7 +88,7 @@ Increment 2 mencakup **TC-083 sampai TC-177**.
 -   TC-119 s.d. TC-121 : Profil (Admin)
 -   TC-122 s.d. TC-124 : Notifikasi (Admin)
 -   TC-125 s.d. TC-129 : Laporan (Admin)
--   TC-130 s.d. TC-137 : Aktivasi Akun (Pengguna Baru)
+-   TC-130 s.d. TC-137 : Aktivasi Akun (Staff Baru)
 -   TC-138 s.d. TC-148 : Stock Opname & Riwayat
 -   TC-149 s.d. TC-150 : Alur Persediaan
 -   TC-151 s.d. TC-152 : Profil (Inventori)

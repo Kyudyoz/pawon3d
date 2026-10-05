@@ -12,8 +12,8 @@ skinparam actor {
   BorderColor #336699
 }
 
-actor "Bagian Inventori" as INV
-actor "Bagian Produksi" as PRD
+actor "Staff Inventori" as INV
+actor "Staff Produksi" as PRD
 actor "Kasir"           as KSR
 
 rectangle "Sistem Manajemen Bisnis Pawon3D — Increment 1" {
@@ -24,11 +24,11 @@ rectangle "Sistem Manajemen Bisnis Pawon3D — Increment 1" {
 
   rectangle "Modul Inventori" {
     (UC-02\nKelola Kategori Produk)         as UC02
-    (UC-03\nKelola Satuan dan Konversi)     as UC03
+    (UC-03\nKelola Satuan)     as UC03
     (UC-04\nKelola Supplier)               as UC04
     (UC-05\nKelola Bahan Baku)             as UC05
     (UC-06\nKelola Belanja)                as UC06
-    (UC-07\nKelola Produk dan Komposisi)   as UC07
+    (UC-07\nKelola Produk)   as UC07
   }
 
   rectangle "Modul Produksi" {
@@ -37,7 +37,7 @@ rectangle "Sistem Manajemen Bisnis Pawon3D — Increment 1" {
 
   rectangle "Modul Kasir" {
     (UC-09\nMembuat Pesanan\ndan Pembayaran) as UC09
-    (UC-10\nKelola Shift Kasir)             as UC10
+    (UC-10\nBuka/Tutup Shift Kasir)             as UC10
   }
 }
 

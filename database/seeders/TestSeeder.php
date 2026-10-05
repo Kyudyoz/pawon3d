@@ -120,7 +120,7 @@ class TestSeeder extends Seeder
         $userInventori = User::firstOrCreate(
             ['email' => 'inventori@pawon3d.com'],
             [
-                'name' => 'Bagian Inventori',
+                'name' => 'Staff Inventori',
                 'phone' => '081100001100',
                 'password' => Hash::make('Password1'),
                 'gender' => 'Laki-laki',
@@ -134,7 +134,7 @@ class TestSeeder extends Seeder
         $userProduksi = User::firstOrCreate(
             ['email' => 'produksi@pawon3d.com'],
             [
-                'name' => 'Bagian Produksi',
+                'name' => 'Staff Produksi',
                 'phone' => '081100002200',
                 'password' => Hash::make('Password1'),
                 'gender' => 'Perempuan',

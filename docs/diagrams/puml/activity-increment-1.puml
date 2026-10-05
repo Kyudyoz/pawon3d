@@ -27,7 +27,7 @@ endif
 
 |#LightGreen|Mengelola Kategori (Inventori)|
 start
-:Bagian Inventori mengakses halaman kategori;
+:Staff Inventori mengakses halaman kategori;
 :Sistem menampilkan daftar kategori;
 
 if (Aksi?) then (Tambah)
@@ -49,7 +49,7 @@ stop
 
 |#LightYellow|Mengelola Bahan Baku (Inventori)|
 start
-:Bagian Inventori mengakses halaman bahan baku;
+:Staff Inventori mengakses halaman bahan baku;
 :Sistem menampilkan daftar bahan dengan status;
 
 if (Aksi?) then (Tambah)
@@ -67,7 +67,7 @@ stop
 
 |#LightPink|Proses Belanja (Inventori)|
 start
-:Bagian Inventori mengakses halaman belanja;
+:Staff Inventori mengakses halaman belanja;
 :Sistem menampilkan daftar rencana belanja;
 :Membuat rencana belanja baru;
 :Memilih supplier;
@@ -110,7 +110,7 @@ stop
 
 |#LightCoral|Proses Produksi Pesanan (Produksi)|
 start
-:Bagian Produksi mengakses halaman produksi;
+:Staff Produksi mengakses halaman produksi;
 :Sistem menampilkan daftar produksi;
 :Mengakses antrian pesanan/produksi;
 :Sistem menampilkan pesanan yang perlu diproduksi;
@@ -136,7 +136,7 @@ stop
 
 |#Lavender|Produksi Siap Beli (Produksi)|
 start
-:Bagian Produksi membuat produksi siap beli;
+:Staff Produksi membuat produksi siap beli;
 :Memilih produk dan jumlah;
 :Sistem generate nomor produksi;
 :Simpan data produksi;

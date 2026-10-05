@@ -5,7 +5,7 @@ title Entity Relationship Diagram - Increment 1 (UC-01 s.d. UC-10)
 skinparam linetype ortho
 
 entity "users" {
-  *id : int <<PK>>
+  *id : uuid <<PK>>
   --
   name : varchar
   email : varchar
@@ -14,25 +14,25 @@ entity "users" {
 }
 
 entity "categories" {
-  *id : int <<PK>>
+  *id : uuid <<PK>>
   --
   name : varchar
   is_active : tinyint
 }
 
 entity "units" {
-  *id : int <<PK>>
+  *id : uuid <<PK>>
   --
   name : varchar
   alias : varchar
   group : varchar
-  base_unit_id : int <<FK>>
+  base_unit_id : uuid <<FK>>
   conversion_factor : decimal
 }
 units ||--o{ units : "derived from"
 
 entity "suppliers" {
-  *id : int <<PK>>
+  *id : uuid <<PK>>
   --
   name : varchar
   description : text
@@ -45,7 +45,7 @@ entity "suppliers" {
 }
 
 entity "materials" {
-  *id : int <<PK>>
+  *id : uuid <<PK>>
   --
   name : varchar
   description : text
@@ -57,10 +57,10 @@ entity "materials" {
 }
 
 entity "material_details" {
-  *id : int <<PK>>
+  *id : uuid <<PK>>
   --
-  material_id : int <<FK>>
-  unit_id : int <<FK>>
+  material_id : uuid <<FK>>
+  unit_id : uuid <<FK>>
   is_main : tinyint
   quantity : decimal
   supply_quantity : decimal
@@ -70,10 +70,10 @@ materials ||--|{ material_details : "has"
 units ||--o{ material_details
 
 entity "material_batches" {
-  *id : int <<PK>>
+  *id : uuid <<PK>>
   --
-  material_id : int <<FK>>
-  unit_id : int <<FK>>
+  material_id : uuid <<FK>>
+  unit_id : uuid <<FK>>
   batch_number : varchar
   date : date
   batch_quantity : decimal
@@ -82,11 +82,11 @@ materials ||--|{ material_batches : "has"
 units ||--o{ material_batches
 
 entity "expenses" {
-  *id : int <<PK>>
+  *id : uuid <<PK>>
   --
   expense_number : varchar
   expense_date : date
-  supplier_id : int <<FK>>
+  supplier_id : uuid <<FK>>
   status : varchar
   grand_total_expect : decimal
   grand_total_actual : decimal
@@ -96,11 +96,11 @@ entity "expenses" {
 suppliers ||--o{ expenses
 
 entity "expense_details" {
-  *id : int <<PK>>
+  *id : uuid <<PK>>
   --
-  expense_id : int <<FK>>
-  material_id : int <<FK>>
-  unit_id : int <<FK>>
+  expense_id : uuid <<FK>>
+  material_id : uuid <<FK>>
+  unit_id : uuid <<FK>>
   quantity_expect : decimal
   quantity_get : decimal
   price_expect : decimal
@@ -114,13 +114,13 @@ materials ||--o{ expense_details
 units ||--o{ expense_details
 
 entity "type_costs" {
-  *id : int <<PK>>
+  *id : uuid <<PK>>
   --
   name : varchar
 }
 
 entity "products" {
-  *id : int <<PK>>
+  *id : uuid <<PK>>
   --
   name : varchar
   description : text
@@ -134,20 +134,20 @@ entity "products" {
 }
 
 entity "product_categories" {
-  *id : int <<PK>>
+  *id : uuid <<PK>>
   --
-  product_id : int <<FK>>
-  category_id : int <<FK>>
+  product_id : uuid <<FK>>
+  category_id : uuid <<FK>>
 }
 products ||--|{ product_categories
 categories ||--|{ product_categories
 
 entity "product_compositions" {
-  *id : int <<PK>>
+  *id : uuid <<PK>>
   --
-  product_id : int <<FK>>
-  material_id : int <<FK>>
-  unit_id : int <<FK>>
+  product_id : uuid <<FK>>
+  material_id : uuid <<FK>>
+  unit_id : uuid <<FK>>
   material_quantity : decimal
 }
 products ||--|{ product_compositions : "composed of"
@@ -155,21 +155,21 @@ materials ||--o{ product_compositions
 units ||--o{ product_compositions
 
 entity "other_costs" {
-  *id : int <<PK>>
+  *id : uuid <<PK>>
   --
-  product_id : int <<FK>>
-  type_cost_id : int <<FK>>
+  product_id : uuid <<FK>>
+  type_cost_id : uuid <<FK>>
   price : decimal
 }
 products ||--o{ other_costs
 type_costs ||--o{ other_costs
 
 entity "shifts" {
-  *id : int <<PK>>
+  *id : uuid <<PK>>
   --
   shift_number : varchar
-  opened_by : int <<FK>>
-  closed_by : int <<FK>>
+  opened_by : uuid <<FK>>
+  closed_by : uuid <<FK>>
   start_time : datetime
   end_time : datetime
   status : varchar
@@ -182,9 +182,9 @@ entity "shifts" {
 users ||--o{ shifts : "opened_by"
 
 entity "transactions" {
-  *id : int <<PK>>
+  *id : uuid <<PK>>
   --
-  user_id : int <<FK>>
+  user_id : uuid <<FK>>
   invoice_number : varchar
   name : varchar
   phone : varchar
@@ -194,16 +194,16 @@ entity "transactions" {
   status : varchar
   method : varchar
   total_amount : decimal
-  created_by_shift : int <<FK>>
+  created_by_shift : uuid <<FK>>
 }
 users ||--o{ transactions
 shifts ||--o{ transactions : "created in"
 
 entity "transaction_details" {
-  *id : int <<PK>>
+  *id : uuid <<PK>>
   --
-  transaction_id : int <<FK>>
-  product_id : int <<FK>>
+  transaction_id : uuid <<FK>>
+  product_id : uuid <<FK>>
   quantity : int
   price : decimal
   pcs_capital_snapshot : decimal
@@ -212,7 +212,7 @@ transactions ||--|{ transaction_details : "contains"
 products ||--o{ transaction_details
 
 entity "payment_channels" {
-  *id : int <<PK>>
+  *id : uuid <<PK>>
   --
   type : varchar
   group : varchar
@@ -224,11 +224,11 @@ entity "payment_channels" {
 }
 
 entity "payments" {
-  *id : int <<PK>>
+  *id : uuid <<PK>>
   --
   receipt_number : varchar
-  transaction_id : int <<FK>>
-  payment_channel_id : int <<FK>>
+  transaction_id : uuid <<FK>>
+  payment_channel_id : uuid <<FK>>
   payment_method : varchar
   payment_group : varchar
   paid_amount : decimal
@@ -238,10 +238,10 @@ transactions ||--|{ payments : "paid via"
 payment_channels ||--o{ payments
 
 entity "productions" {
-  *id : int <<PK>>
+  *id : uuid <<PK>>
   --
   production_number : varchar
-  transaction_id : int <<FK>>
+  transaction_id : uuid <<FK>>
   method : varchar
   date : date
   time : time
@@ -252,10 +252,10 @@ entity "productions" {
 transactions ||--o{ productions : "triggers"
 
 entity "production_details" {
-  *id : int <<PK>>
+  *id : uuid <<PK>>
   --
-  production_id : int <<FK>>
-  product_id : int <<FK>>
+  production_id : uuid <<FK>>
+  product_id : uuid <<FK>>
   quantity_plan : decimal
   quantity_get : decimal
   quantity_fail : decimal
@@ -265,41 +265,12 @@ productions ||--|{ production_details : "has"
 products ||--o{ production_details
 
 entity "production_workers" {
-  *id : int <<PK>>
+  *id : uuid <<PK>>
   --
-  production_id : int <<FK>>
-  user_id : int <<FK>>
+  production_id : uuid <<FK>>
+  user_id : uuid <<FK>>
 }
 productions ||--o{ production_workers
 users ||--o{ production_workers
-
-entity "inventory_logs" {
-  *id : int <<PK>>
-  --
-  material_id : int <<FK>>
-  material_batch_id : int <<FK>>
-  user_id : int <<FK>>
-  action : varchar
-  quantity_change : decimal
-  quantity_after : decimal
-  reference_type : varchar
-  reference_id : int
-  note : text
-}
-materials ||--o{ inventory_logs
-material_batches ||--o{ inventory_logs
-users ||--o{ inventory_logs
-
-entity "notifications" {
-  *id : int <<PK>>
-  --
-  user_id : int <<FK>>
-  title : varchar
-  body : text
-  type : varchar
-  is_read : tinyint
-  status : varchar
-}
-users ||--o{ notifications
 
 @enduml

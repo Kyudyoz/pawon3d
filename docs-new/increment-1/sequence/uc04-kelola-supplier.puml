@@ -1,7 +1,7 @@
 @startuml Sequence_UC04
 title UC-04: Kelola Supplier
 
-actor "Bagian Inventori" as User
+actor "Staff Inventori" as User
 participant "Halaman Supplier\n(livewire/supplier)" as View
 participant "Supplier\\Form\n(Livewire)" as Component
 participant "Supplier Model" as SupplierModel

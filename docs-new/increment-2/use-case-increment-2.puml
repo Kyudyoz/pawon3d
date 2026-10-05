@@ -1,36 +1,16 @@
 @startuml UseCase_Increment2
-title Use Case Diagram - Increment 2 (UC-01 s.d. UC-22)
+ title Use Case Diagram - Increment 2 (UC-11 s.d. UC-22)
 
 left to right direction
 skinparam packageStyle rectangle
 
 actor "Staff Inventori" as Inventori
-actor "Staff Produksi" as Produksi
 actor "Kasir" as Kasir
 actor "Admin" as Admin
 actor "Semua Pengguna" as AllUser
 actor "Staff Baru" as NewUser
 actor "Pengunjung" as Visitor
 
-' ========================
-' INCREMENT 1 (inherited)
-' ========================
-rectangle "Increment 1 - Fitur Inti" {
-  usecase "UC-01\nLogin dan Logout" as UC01
-  usecase "UC-02\nKelola Kategori Produk" as UC02
-  usecase "UC-03\nKelola Satuan" as UC03
-  usecase "UC-04\nKelola Supplier" as UC04
-  usecase "UC-05\nKelola Bahan Baku" as UC05
-  usecase "UC-06\nKelola Belanja" as UC06
-  usecase "UC-07\nKelola Produk" as UC07
-  usecase "UC-08\nKelola Produksi" as UC08
-  usecase "UC-09\nMembuat Pesanan dan Pembayaran" as UC09
-  usecase "UC-10\nBuka/Tutup Shift Kasir" as UC10
-}
-
-' ========================
-' INCREMENT 2 (new)
-' ========================
 rectangle "Increment 2 - Fitur Lanjutan" {
   ' Admin
   usecase "UC-11\nKelola Pengguna" as UC11
@@ -57,23 +37,6 @@ rectangle "Increment 2 - Fitur Lanjutan" {
   usecase "UC-22\nKelola Notifikasi" as UC22
 }
 
-' ========================
-' RELASI INCREMENT 1
-' ========================
-AllUser --> UC01
-Inventori --> UC02
-Inventori --> UC03
-Inventori --> UC04
-Inventori --> UC05
-Inventori --> UC06
-Inventori --> UC07
-Produksi --> UC08
-Kasir --> UC09
-Kasir --> UC10
-
-' ========================
-' RELASI INCREMENT 2
-' ========================
 Admin --> UC11
 Admin --> UC12
 Admin --> UC13

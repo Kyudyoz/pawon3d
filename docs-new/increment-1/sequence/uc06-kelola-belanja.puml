@@ -1,7 +1,7 @@
 @startuml Sequence_UC06
 title UC-06: Kelola Belanja
 
-actor "Bagian Inventori" as User
+actor "Staff Inventori" as User
 participant "Halaman Belanja\n(livewire/expense)" as View
 participant "Expense\\Form\n(Livewire)" as FormComponent
 participant "Expense\\Mulai\n(Livewire)" as MulaiComponent

@@ -5,7 +5,7 @@ skinparam activityShape octagon
 title Activity Diagram\nProses Belanja Bahan Baku
 
 start
-:Bagian Inventori mengakses halaman belanja;
+:Staff Inventori mengakses halaman belanja;
 :Sistem menampilkan daftar rencana belanja;
 :Membuat rencana belanja baru;
 :Memilih supplier;

@@ -19,25 +19,25 @@
 
 _(TC-001 s.d. TC-082)_
 
-| Aktor            | Fitur                                                         |
-| ---------------- | ------------------------------------------------------------- |
-| Bagian Inventori | Autentikasi (Login/Logout)                                    |
-| Bagian Inventori | Manajemen Kategori Produk                                     |
-| Bagian Inventori | Manajemen Satuan Ukur                                         |
-| Bagian Inventori | Manajemen Supplier                                            |
-| Bagian Inventori | Manajemen Bahan Baku                                          |
-| Bagian Inventori | Manajemen Belanja Bahan Baku                                  |
-| Bagian Inventori | Manajemen Produk dan Komposisi                                |
-| Bagian Produksi  | Autentikasi (Login/Logout)                                    |
-| Bagian Produksi  | Melihat Antrian Produksi                                      |
-| Bagian Produksi  | Memulai dan Menyelesaikan Produksi Pesanan                    |
-| Bagian Produksi  | Membuat Produksi Siap Beli                                    |
-| Kasir            | Autentikasi (Login/Logout)                                    |
-| Kasir            | Membuka dan Menutup Shift Penjualan                           |
-| Kasir            | Membuat Transaksi (Pesanan Reguler, Pesanan Kotak, Siap Beli) |
-| Kasir            | Memproses Pembayaran                                          |
-| Kasir            | Mencetak Struk                                                |
-| Kasir            | Melihat Riwayat Transaksi                                     |
+| Aktor           | Fitur                                                         |
+| --------------- | ------------------------------------------------------------- |
+| Staff Inventori | Autentikasi (Login/Logout)                                    |
+| Staff Inventori | Manajemen Kategori Produk                                     |
+| Staff Inventori | Manajemen Satuan Ukur                                         |
+| Staff Inventori | Manajemen Supplier                                            |
+| Staff Inventori | Manajemen Bahan Baku                                          |
+| Staff Inventori | Manajemen Belanja Bahan Baku                                  |
+| Staff Inventori | Manajemen Produk dan Komposisi                                |
+| Staff Produksi  | Autentikasi (Login/Logout)                                    |
+| Staff Produksi  | Melihat Antrian Produksi                                      |
+| Staff Produksi  | Memulai dan Menyelesaikan Produksi Pesanan                    |
+| Staff Produksi  | Membuat Produksi Siap Beli                                    |
+| Kasir           | Autentikasi (Login/Logout)                                    |
+| Kasir           | Membuka dan Menutup Shift Penjualan                           |
+| Kasir           | Membuat Transaksi (Pesanan Reguler, Pesanan Kotak, Siap Beli) |
+| Kasir           | Memproses Pembayaran                                          |
+| Kasir           | Mencetak Struk                                                |
+| Kasir           | Melihat Riwayat Transaksi                                     |
 
 ### Increment 2 — Modul Pendukung Operasional
 
@@ -54,7 +54,7 @@ _(TC-083 s.d. TC-135)_
 | Semua Pengguna | Mengubah Profil Sendiri                       |
 | Semua Pengguna | Melihat dan Mengelola Notifikasi              |
 | Semua Pengguna | Melihat dan Mengekspor Laporan                |
-| Pengguna Baru  | Aktivasi Akun melalui Link Undangan           |
+| Staff Baru     | Aktivasi Akun melalui Link Undangan           |
 
 ---
 
@@ -62,13 +62,13 @@ _(TC-083 s.d. TC-135)_
 
 ### Aktor Sistem
 
-| Aktor            | Deskripsi                                           |
-| ---------------- | --------------------------------------------------- |
-| Bagian Inventori | Pengelola bahan baku, produk, supplier, dan belanja |
-| Bagian Produksi  | Pengelola proses produksi                           |
-| Kasir            | Pengelola transaksi penjualan dan shift             |
-| Admin            | Pengelola sistem, pengguna, peran, dan pengaturan   |
-| Pengguna Baru    | Pekerja baru yang belum mengaktifkan akun           |
+| Aktor           | Deskripsi                                           |
+| --------------- | --------------------------------------------------- |
+| Staff Inventori | Pengelola bahan baku, produk, supplier, dan belanja |
+| Staff Produksi  | Pengelola proses produksi                           |
+| Kasir           | Pengelola transaksi penjualan dan shift             |
+| Admin           | Pengelola sistem, pengguna, peran, dan pengaturan   |
+| Staff Baru      | Pekerja baru yang belum mengaktifkan akun           |
 
 ---
 
@@ -76,7 +76,7 @@ _(TC-083 s.d. TC-135)_
 
 | Folder        | Komponen                                                                                         | Fungsi                         |
 | ------------- | ------------------------------------------------------------------------------------------------ | ------------------------------ |
-| —             | `ActivateAccount`                                                                                | Aktivasi akun pengguna baru    |
+| —             | `ActivateAccount`                                                                                | Aktivasi akun Staff Baru       |
 | Actions/      | `Logout`                                                                                         | Proses logout                  |
 | Alur/         | `Index`                                                                                          | Tampilan alur informasi        |
 | Category/     | `Index`                                                                                          | Manajemen kategori produk      |

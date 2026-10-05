@@ -16,7 +16,7 @@ UP -> UC : mount()
 UC -> UM : with('role')->get()
 UC --> UP : displayUsers()
 
-Admin -> UP : Undang pengguna baru(email, role_id)
+Admin -> UP : Undang Staff Baru(email, role_id)
 UP -> UC : invite(email, role_id)
 UC -> UC : validate(email, role_id)
 

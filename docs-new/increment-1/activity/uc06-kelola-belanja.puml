@@ -1,14 +1,14 @@
 @startuml Activity_UC06
 title UC-06: Kelola Belanja
 
-|Bagian Inventori|
+|Staff Inventori|
 start
 :Pengguna memilih menu Belanja;
 
 |Sistem|
 :Sistem menampilkan daftar rencana belanja\nyang sedang aktif;
 
-|Bagian Inventori|
+|Staff Inventori|
 :Pengguna menekan tombol Tambah Belanja;
 :Pengguna memilih supplier;
 :Pengguna memilih tanggal belanja;
@@ -30,7 +30,7 @@ endif
 :Sistem menyimpan rencana belanja\ndengan status "Draft";
 :Sistem menampilkan notifikasi sukses;
 
-|Bagian Inventori|
+|Staff Inventori|
 :Pengguna membuka rincian belanja;
 :Pengguna menekan tombol Mulai Belanja;
 
@@ -38,7 +38,7 @@ endif
 :Sistem mengubah status belanja\nmenjadi "Dimulai";
 :Sistem menampilkan formulir\ninput hasil belanja;
 
-|Bagian Inventori|
+|Staff Inventori|
 :Pengguna mengisi jumlah aktual, harga aktual,\ndan tanggal kedaluwarsa untuk setiap item;
 :Pengguna menekan tombol Simpan;
 
@@ -50,7 +50,7 @@ else (Tidak)
 endif
 :Sistem menyimpan input hasil belanja;
 
-|Bagian Inventori|
+|Staff Inventori|
 :Pengguna menekan tombol Selesaikan Belanja;
 
 |Sistem|

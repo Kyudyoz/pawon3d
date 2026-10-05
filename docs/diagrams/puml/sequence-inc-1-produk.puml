@@ -4,7 +4,7 @@ skinparam sequenceMessageAlign center
 
 title Sequence Diagram\nMengelola Produk & Komposisi
 
-actor "Bagian Inventori" as Inv
+actor "Staff Inventori" as Inv
 participant "ProductPage" as PP
 participant "ProductController" as PC
 participant "Product" as PM

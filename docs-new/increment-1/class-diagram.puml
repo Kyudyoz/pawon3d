@@ -6,7 +6,7 @@ skinparam classFontStyle Bold
 
 ' ===== AUTENTIKASI =====
 class User {
-  +id: int
+  +id: uuid
   +name: string
   +email: string
   +password: string
@@ -17,24 +17,24 @@ class User {
 
 ' ===== KATEGORI & SATUAN =====
 class Category {
-  +id: int
+  +id: uuid
   +name: string
   +is_active: bool
 }
 
 class Unit {
-  +id: int
+  +id: uuid
   +name: string
   +alias: string
   +group: string
-  +base_unit_id: int|null
+  +base_unit_id: uuid|null
   +conversion_factor: float|null
 }
 Unit "*" --> "0..1" Unit : base unit of
 
 ' ===== SUPPLIER =====
 class Supplier {
-  +id: int
+  +id: uuid
   +name: string
   +description: string
   +contact_name: string
@@ -47,7 +47,7 @@ class Supplier {
 
 ' ===== BAHAN BAKU =====
 class Material {
-  +id: int
+  +id: uuid
   +name: string
   +description: string
   +image: string
@@ -58,9 +58,9 @@ class Material {
 }
 
 class MaterialDetail {
-  +id: int
-  +material_id: int
-  +unit_id: int
+  +id: uuid
+  +material_id: uuid
+  +unit_id: uuid
   +is_main: bool
   +quantity: float
   +supply_quantity: float
@@ -68,9 +68,9 @@ class MaterialDetail {
 }
 
 class MaterialBatch {
-  +id: int
-  +material_id: int
-  +unit_id: int
+  +id: uuid
+  +material_id: uuid
+  +unit_id: uuid
   +batch_number: string
   +date: date
   +batch_quantity: float
@@ -78,10 +78,10 @@ class MaterialBatch {
 
 ' ===== BELANJA =====
 class Expense {
-  +id: int
+  +id: uuid
   +expense_number: string
   +expense_date: date
-  +supplier_id: int
+  +supplier_id: uuid
   +status: string
   +grand_total_expect: decimal
   +grand_total_actual: decimal
@@ -90,10 +90,10 @@ class Expense {
 }
 
 class ExpenseDetail {
-  +id: int
-  +expense_id: int
-  +material_id: int
-  +unit_id: int
+  +id: uuid
+  +expense_id: uuid
+  +material_id: uuid
+  +unit_id: uuid
   +quantity_expect: float
   +quantity_get: float
   +price_expect: decimal
@@ -105,7 +105,7 @@ class ExpenseDetail {
 
 ' ===== PRODUK =====
 class Product {
-  +id: int
+  +id: uuid
   +name: string
   +description: string
   +price: decimal
@@ -118,30 +118,30 @@ class Product {
 }
 
 class ProductComposition {
-  +id: int
-  +product_id: int
-  +material_id: int
-  +unit_id: int
+  +id: uuid
+  +product_id: uuid
+  +material_id: uuid
+  +unit_id: uuid
   +material_quantity: float
 }
 
 class OtherCost {
-  +id: int
-  +product_id: int
-  +type_cost_id: int
+  +id: uuid
+  +product_id: uuid
+  +type_cost_id: uuid
   +price: decimal
 }
 
 class TypeCost {
-  +id: int
+  +id: uuid
   +name: string
 }
 
 ' ===== PRODUKSI =====
 class Production {
-  +id: int
+  +id: uuid
   +production_number: string
-  +transaction_id: int|null
+  +transaction_id: uuid|null
   +method: string
   +date: date
   +time: time
@@ -151,9 +151,9 @@ class Production {
 }
 
 class ProductionDetail {
-  +id: int
-  +production_id: int
-  +product_id: int
+  +id: uuid
+  +production_id: uuid
+  +product_id: uuid
   +quantity_plan: float
   +quantity_get: float
   +quantity_fail: float
@@ -161,15 +161,15 @@ class ProductionDetail {
 }
 
 class ProductionWorker {
-  +id: int
-  +production_id: int
-  +user_id: int
+  +id: uuid
+  +production_id: uuid
+  +user_id: uuid
 }
 
 ' ===== TRANSAKSI =====
 class Transaction {
-  +id: int
-  +user_id: int
+  +id: uuid
+  +user_id: uuid
   +invoice_number: string
   +name: string
   +phone: string
@@ -179,23 +179,23 @@ class Transaction {
   +status: string
   +method: string
   +total_amount: decimal
-  +created_by_shift: int
+  +created_by_shift: uuid
 }
 
 class TransactionDetail {
-  +id: int
-  +transaction_id: int
-  +product_id: int
+  +id: uuid
+  +transaction_id: uuid
+  +product_id: uuid
   +quantity: int
   +price: decimal
   +pcs_capital_snapshot: decimal
 }
 
 class Payment {
-  +id: int
+  +id: uuid
   +receipt_number: string
-  +transaction_id: int
-  +payment_channel_id: int
+  +transaction_id: uuid
+  +payment_channel_id: uuid
   +payment_method: string
   +payment_group: string
   +paid_amount: decimal
@@ -203,7 +203,7 @@ class Payment {
 }
 
 class PaymentChannel {
-  +id: int
+  +id: uuid
   +type: string
   +group: string
   +bank_name: string
@@ -215,10 +215,10 @@ class PaymentChannel {
 
 ' ===== SHIFT =====
 class Shift {
-  +id: int
+  +id: uuid
   +shift_number: string
-  +opened_by: int
-  +closed_by: int|null
+  +opened_by: uuid
+  +closed_by: uuid|null
   +start_time: datetime
   +end_time: datetime|null
   +status: string
@@ -227,30 +227,6 @@ class Shift {
   +total_sales: decimal
   +total_refunds: decimal
   +total_discounts: decimal
-}
-
-' ===== INVENTORY LOG & NOTIFIKASI =====
-class InventoryLog {
-  +id: int
-  +material_id: int
-  +material_batch_id: int|null
-  +user_id: int
-  +action: string
-  +quantity_change: float
-  +quantity_after: float
-  +reference_type: string
-  +reference_id: int
-  +note: string
-}
-
-class Notification {
-  +id: int
-  +user_id: int
-  +title: string
-  +body: string
-  +type: string
-  +is_read: bool
-  +status: string
 }
 
 ' ===== RELASI =====
@@ -272,7 +248,8 @@ ProductComposition "*" --> "1" Unit
 OtherCost "*" --> "1" TypeCost
 
 Production "1" *-- "1..*" ProductionDetail
-Production "*" --> "0..*" User : production_workers
+Production "1" *-- "0..*" ProductionWorker
+ProductionWorker "*" --> "1" User
 Production "*" --> "0..1" Transaction
 ProductionDetail "*" --> "1" Product
 
@@ -284,9 +261,5 @@ TransactionDetail "*" --> "1" Product
 Payment "*" --> "1" PaymentChannel
 
 Shift "*" --> "1" User : opened_by
-InventoryLog "*" --> "1" Material
-InventoryLog "*" --> "0..1" MaterialBatch
-InventoryLog "*" --> "1" User
-Notification "*" --> "1" User
 
 @enduml

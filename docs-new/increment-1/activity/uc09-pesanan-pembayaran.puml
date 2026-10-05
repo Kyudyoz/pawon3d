@@ -47,7 +47,7 @@ fork
   endif
   :Sistem menyimpan transaksi\ndengan status "Aktif";
   :Sistem membuat antrian produksi;
-  :Sistem mengirimkan notifikasi ke Bagian Produksi;
+  :Sistem mengirimkan notifikasi ke Staff Produksi;
 
 fork again
   :Alur Siap Beli;

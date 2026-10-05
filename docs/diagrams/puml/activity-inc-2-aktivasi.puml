@@ -2,10 +2,10 @@
 
 skinparam activityShape octagon
 
-title Activity Diagram\nAktivasi Akun Pengguna Baru
+title Activity Diagram\nAktivasi Akun Staff Baru
 
 start
-:Pengguna baru menerima email undangan;
+:Staff Baru menerima email undangan;
 :Mengakses link aktivasi valid;
 :Sistem memvalidasi token;
 

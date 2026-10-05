@@ -1,5 +1,5 @@
 @startuml Activity_UC11
-title UC-11: Kelola Pengguna dan Undangan
+title UC-11: Kelola Pengguna
 
 |Admin|
 start
@@ -10,7 +10,7 @@ start
 
 |Admin|
 fork
-  :Menambah Pengguna Baru;
+  :Menambah Staff Baru;
   :Admin menekan tombol Undang Pengguna;
   :Admin mengisi nama, email, dan peran;
   :Admin menekan tombol Kirim Undangan;

@@ -32,7 +32,7 @@ end
 
 == Mengelola Bahan Baku (Inventori) ==
 
-actor "Bagian Inventori" as Inv
+actor "Staff Inventori" as Inv
 participant "MaterialPage" as MP
 participant "MaterialController" as MC
 participant "Material Model" as MM
@@ -93,7 +93,7 @@ EC --> EP : showSuccess()
 
 == Proses Produksi (Produksi) ==
 
-actor "Bagian Produksi" as Prod
+actor "Staff Produksi" as Prod
 participant "ProductionPage" as PP
 participant "ProductionController" as PC
 participant "Production" as PR

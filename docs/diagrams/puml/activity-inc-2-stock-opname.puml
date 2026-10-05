@@ -5,7 +5,7 @@ skinparam activityShape octagon
 title Activity Diagram\nStock Opname (Hitung)
 
 start
-:Bagian Inventori mengakses halaman hitung;
+:Staff Inventori mengakses halaman hitung;
 :Sistem menampilkan daftar rencana hitung;
 :Membuat rencana hitung;
 :Sistem generate nomor HC-YYMMDD-XXXX;

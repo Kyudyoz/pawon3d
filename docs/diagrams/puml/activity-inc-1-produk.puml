@@ -5,7 +5,7 @@ skinparam activityShape octagon
 title Activity Diagram\nMengelola Produk & Komposisi
 
 start
-:Bagian Inventori mengakses halaman produk;
+:Staff Inventori mengakses halaman produk;
 :Sistem menampilkan daftar produk;
 
 if (Aksi?) then (Tambah Produk)
