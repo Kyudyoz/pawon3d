@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\Route;
 use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
 
+Route::get('/health', function () {
+    return response()->json([
+        'status' => 'ok',
+    ]);
+});
+
 Route::get('/', App\Livewire\Landing\Index::class)->name('home');
 Route::get('/landing-produk', App\Livewire\Landing\Produk::class)->name('landing-produk');
 Route::get('/landing-produk/{product}', App\Livewire\Landing\Detail::class)->name('landing-produk-detail');
