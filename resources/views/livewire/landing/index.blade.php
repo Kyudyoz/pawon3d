@@ -218,11 +218,7 @@
                                     <div class="min-h-[50px] md:min-h-[70px] flex flex-col gap-1 items-center">
                                         <h3 class="text-sm md:text-base montserrat-medium text-[#666666] line-clamp-2">
                                             {{ $product->name }}</h3>
-                                        @if ($product->pcs)
-                                            <span
-                                                class="text-xs md:text-sm montserrat-medium text-[#6c7068] opacity-80">({{ $product->pcs }}
-                                                pcs)</span>
-                                        @endif
+                                        
                                     </div>
                                     <p class="text-base md:text-lg montserrat-semibold text-[#666666]">
                                         Rp{{ number_format($product->price, 0, ',', '.') }}</p>

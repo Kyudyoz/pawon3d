@@ -30,11 +30,7 @@
                     <div class="flex flex-col gap-2 md:gap-3">
                         <div class="flex flex-wrap items-center gap-2">
                             <h1 class="font-medium text-2xl md:text-[30px] text-[#666666] leading-tight">{{ $product->name }}</h1>
-                            @if ($product->pcs)
-                                <span class="font-medium text-2xl md:text-[30px] text-[#666666]">
-                                    ({{ $product->pcs }} pcs)
-                                </span>
-                            @endif
+                            
                         </div>
                         <p class="font-semibold text-xl md:text-2xl text-[#666666]">
                             Rp{{ number_format($product->price, 0, ',', '.') }}
@@ -112,13 +108,7 @@
                                             {{ $relatedProduct->name }}
                                         </p>
                                     </div>
-                                    @if ($relatedProduct->pcs)
-                                        <div class="flex items-start justify-center w-full">
-                                            <span
-                                                class="font-medium text-sm md:text-base text-[#666666]">({{ $relatedProduct->pcs }}
-                                                pcs)</span>
-                                        </div>
-                                    @endif
+                                    
                                 </div>
 
                                 {{-- Price --}}
