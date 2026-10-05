@@ -10,10 +10,7 @@ mkdir -p /var/www/html/storage/framework/cache/data
 mkdir -p /var/www/html/storage/framework/sessions
 mkdir -p /var/www/html/storage/framework/views
 mkdir -p /var/www/html/storage/logs
-
-# Ensure permissions
-chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
-chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
+touch /var/www/html/storage/logs/laravel.log
 
 # Create storage symlink
 php artisan storage:link || true
@@ -29,6 +26,10 @@ php artisan migrate --force || true
 php artisan config:cache || true
 php artisan route:cache || true
 php artisan view:cache || true
+
+# Ensure permissions AFTER all artisan commands run
+chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+chmod -R 777 /var/www/html/storage /var/www/html/bootstrap/cache
 
 echo "Starting PHP-FPM..."
 php-fpm -D
