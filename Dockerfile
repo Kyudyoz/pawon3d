@@ -1,12 +1,4 @@
-# Stage 1: Build Frontend Assets (Vite & Tailwind CSS v4)
-FROM node:20-slim AS frontend
-WORKDIR /app
-COPY package*.json ./
-RUN npm install
-COPY . .
-RUN npm run build
-
-# Stage 2: PHP Application & Nginx Web Server
+# PHP Application & Nginx Web Server
 FROM php:8.3-fpm-alpine
 
 # Install system dependencies and PHP extensions
@@ -30,11 +22,8 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html
 
-# Copy application files
+# Copy application files (including pre-built public/build assets)
 COPY . .
-
-# Copy compiled Vite assets from frontend stage
-COPY --from=frontend /app/public/build ./public/build
 
 # Install PHP dependencies without dev packages
 RUN composer install --no-dev --optimize-autoloader --no-interaction
